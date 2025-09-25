@@ -1,0 +1,33 @@
+name: Manual Step Approval Workflow
+ 
+on:
+  workflow_dispatch:
+ 
+jobs:
+  step1:
+    name: Step 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Step 1
+        run: |
+          echo "Step 1 complete"
+ 
+  step2:
+    name: Step 2 (Approval Required)
+    needs: step1
+    runs-on: ubuntu-latest
+    environment:
+      name: approval-env
+    steps:
+      - name: Run Step 2
+        run: |
+          echo "Step 2 complete"
+ 
+  step3:
+    name: Step 3
+    needs: step2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Step 3
+        run: |
+          echo "Step 3 complete"
