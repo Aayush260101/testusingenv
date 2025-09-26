@@ -33,3 +33,4 @@ jobs:
       - name: Run Step 3
         run: |
           echo "Step 3 complete"
+          exit 1
