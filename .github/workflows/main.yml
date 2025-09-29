@@ -22,7 +22,7 @@ jobs:
       - name: Run Step 2
         run: |
           echo "Step 2 complete"
-          exit 1
+          
  
   step3:
     name: Step 3
